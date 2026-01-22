@@ -15,6 +15,6 @@ class PostsController extends Controller
             ['id' => 4, 'title' => 'Python', 'posted_by' => 'Sara', 'created_at' => '2024-02-03 11:20:00'],
         ];
 
-        return view('test', ['posts' => $all_posts]);
+        return view('posts.index', ['posts' => $all_posts]);
     }
 }
