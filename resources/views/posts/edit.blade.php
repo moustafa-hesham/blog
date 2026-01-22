@@ -3,8 +3,9 @@
     Edit
 @endsection
 @section('content')
-    <form>
+    <form method="POST" action="{{ route('posts.update', 1) }}">
         @csrf
+        @method('put')
 
         <!-- Title -->
         <div class="mb-3">

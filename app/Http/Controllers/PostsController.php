@@ -48,4 +48,14 @@ class PostsController extends Controller
 
         return view('posts.edit');
     }
+    public function update()
+    {
+
+        //1- get user data
+        $data = request()->all();
+        // return $data;
+        //2- update the user data in data base
+        // 3-redirection to all posts page
+        return to_route('posts.show', 1);
+    }
 }
