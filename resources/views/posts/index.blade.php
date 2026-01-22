@@ -32,7 +32,7 @@
                         <div>
 
                             <a href='{{ route('posts.show', $post['id']) }}' class="btn btn-info">View</a>
-                            <a class="btn btn-primary">Edit</a>
+                            <a href="{{ route('posts.edit', $post['id']) }}" class="btn btn-primary">Edit</a>
                             <a class="btn btn-danger">Delete</a>
 
                         </div>

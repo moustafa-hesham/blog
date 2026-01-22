@@ -43,4 +43,9 @@ class PostsController extends Controller
         // 3-redirection to all posts page
         return to_route('posts.index');
     }
+    public function edit()
+    {
+
+        return view('posts.edit');
+    }
 }
