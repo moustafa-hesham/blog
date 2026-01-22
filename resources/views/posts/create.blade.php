@@ -3,24 +3,25 @@
     Create
 @endsection
 @section('content')
-    <form method="post" action="">
+    <form method="POST" action="{{ route('posts.store') }}">
+        @csrf
 
         <!-- Title -->
         <div class="mb-3">
             <label class="form-label">Title</label>
-            <input type="text" class="form-control" placeholder="Enter post title">
+            <input name='title' type="text" class="form-control" placeholder="Enter post title">
         </div>
 
         <!-- Description -->
         <div class="mb-3">
             <label class="form-label">Description</label>
-            <textarea class="form-control" rows="4" placeholder="Enter post description"></textarea>
+            <textarea name='description' class="form-control" rows="4" placeholder="Enter post description"></textarea>
         </div>
 
         <!-- Post Creator (Dropdown) -->
         <div class="mb-3">
             <label class="form-label">Post Creator</label>
-            <select class="form-select">
+            <select name='post_creator' class="form-select">
                 <option selected disabled>Choose creator</option>
                 <option>Ahmed</option>
                 <option>Mona</option>

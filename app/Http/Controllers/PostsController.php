@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\returnArgument;
 
 class PostsController extends Controller
 {
@@ -32,5 +33,14 @@ class PostsController extends Controller
     public function create()
     {
         return view('posts.create');
+    }
+    function store()
+    {
+        //1- get user data
+        $data = request()->all();
+        // return $data;
+        //2- store the user data in data base
+        // 3-redirection to all posts page
+        return to_route('posts.index');
     }
 }
