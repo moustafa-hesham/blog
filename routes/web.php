@@ -8,8 +8,10 @@ Route::get('/', function () {
 });
 Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
 
-Route::get('/posts/{post}', [PostsController::class, 'show'])->name('posts.show');
+Route::get('/posts/create', [PostsController::class, 'create'])->name('posts.create');
 
+
+Route::get('/posts/{post}', [PostsController::class, 'show'])->name('posts.show');
 // 1- define new route, so user can access it through browser
 // 2- controller, that render view
 // 3- define view that containts lists of posts

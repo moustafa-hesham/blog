@@ -7,7 +7,7 @@
 
     <div class="text-center my-3">
 
-        <button type="button" class="btn btn-success">Create Post</button>
+        <a href="{{ route('posts.create') }}" type="button" class="btn btn-success">Create Post</a>
 
     </div>
     <table class="table w-75 mx-auto">
