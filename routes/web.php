@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/posts', [PostsController::class, 'index']);
+Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
+
+Route::get('/posts/{post}', [PostsController::class, 'show'])->name('posts.show');
 
 // 1- define new route, so user can access it through browser
 // 2- controller, that render view

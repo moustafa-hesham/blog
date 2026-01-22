@@ -17,4 +17,16 @@ class PostsController extends Controller
 
         return view('posts.index', ['posts' => $all_posts]);
     }
+
+    public function show()
+    {
+        $single_post = [
+            'id' => 1,
+            'title' => 'Python',
+            'posted_by' => 'Moustafa',
+            'created_at' => '2022-10-10 09:00:00',
+            'description' => 'This is description'
+        ];
+        return view('posts.show', ['post' => $single_post]);
+    }
 }
