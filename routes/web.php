@@ -20,3 +20,7 @@ Route::delete('/posts/{post}', [PostsController::class, 'destroy'])->name('posts
 // 2- controller, that render view
 // 3- define view that containts lists of posts
 // 4- remove any static HTML data from the view
+
+// --- Data Base
+// 1- Structure change: create table, edit column, remove column
+// 2- Operations in database: insert record, edit record, delete record
