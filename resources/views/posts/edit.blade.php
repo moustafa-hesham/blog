@@ -3,20 +3,21 @@
     Edit
 @endsection
 @section('content')
-    <form method="POST" action="{{ route('posts.update', 1) }}">
+    <form method="POST" action="{{ route('posts.update', $post->id) }}">
         @csrf
         @method('put')
 
         <!-- Title -->
         <div class="mb-3">
             <label class="form-label">Title</label>
-            <input name='title' type="text" class="form-control" placeholder="Enter post title">
+            <input name='title' type="text" class="form-control" value={{ $post->title}} placeholder="Enter post title">
         </div>
 
         <!-- Description -->
         <div class="mb-3">
             <label class="form-label">Description</label>
-            <textarea name='description' class="form-control" rows="4" placeholder="Enter post description"></textarea>
+            <textarea name='description' class="form-control" rows="4"
+                placeholder="Enter post description">{{ $post->description }}</textarea>
         </div>
 
         <!-- Post Creator (Dropdown) -->
@@ -24,10 +25,11 @@
             <label class="form-label">Post Creator</label>
             <select name='post_creator' class="form-select">
                 <option selected disabled>Choose creator</option>
-                <option>Ahmed</option>
-                <option>Mona</option>
-                <option>Youssef</option>
-                <option>Sara</option>
+
+                @foreach ($users as $user)
+                    <option value={{ $user->id }}>{{ $user->name }}</option>
+
+                @endforeach
             </select>
         </div>
 

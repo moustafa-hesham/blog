@@ -23,10 +23,11 @@
             <label class="form-label">Post Creator</label>
             <select name='post_creator' class="form-select">
                 <option selected disabled>Choose creator</option>
-                <option>Ahmed</option>
-                <option>Mona</option>
-                <option>Youssef</option>
-                <option>Sara</option>
+
+                @foreach ($users as $user)
+                    <option value={{ $user->id }}>{{ $user->name }}</option>
+
+                @endforeach
             </select>
         </div>
 
