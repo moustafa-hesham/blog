@@ -32,6 +32,12 @@ class PostsController extends Controller
     }
     function store()
     {
+        // ** Validation **
+        request()->validate([
+            'title' => ['required', 'min:3'],
+            'description' => ['required', 'min:3'],
+            'post_creator' => ['required', 'exists:users,id']
+        ]);
         //1- get user data
         // $data = request()->all();
         $title = request()->title; //or this method
@@ -40,7 +46,6 @@ class PostsController extends Controller
         //2- store the submitted data in data base
         // Method 1 to add data to DB
         // $post = new post;
-
         // $post->title = $title;
         // $post->description = request()->description;
 
