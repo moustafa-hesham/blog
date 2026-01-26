@@ -20,9 +20,10 @@
             Post Created Info
         </div>
         <div class="card-body">
-            <h5 class="card-title">Name: Mitch</h5>
-            <p class="card-text">Email: mitch@info.com</p>
-            <p class="card-text">Created At: Friday, 15th of August 1995 03:15:00 AM</p>
+            <h5 class="card-title">Name: {{ $post->user?->name ?? 'This post was created by admin' }}</h5>
+            <p class="card-text">Email: {{ $post->user?->name ?? 'This post was created by admin' }}</p>
+            <p class="card-text">Created At: {{ $post->user?->created_at ?? 'This post was created by admin' }} </p>
+
 
         </div>
     </div>

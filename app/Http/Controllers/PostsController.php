@@ -33,9 +33,9 @@ class PostsController extends Controller
     function store()
     {
         //1- get user data
-        $data = request()->all();
+        // $data = request()->all();
         $title = request()->title; //or this method
-
+        $postCreator = request()->post_creator;
         // return $data;
         //2- store the submitted data in data base
         // Method 1 to add data to DB
@@ -48,7 +48,8 @@ class PostsController extends Controller
         // Method 2 to add data to DB
         Post::create([
             'title' => $title,
-            'description' => request()->description
+            'description' => request()->description,
+            'user_id' => $postCreator
         ]);
         // 3-redirection to all posts page
         return to_route('posts.index');
@@ -64,6 +65,7 @@ class PostsController extends Controller
         //1- get user data
         $title = request()->title;
         $description = request()->description;
+        $postCreator = request()->post_creator;
         // return $data;
         //2- update the user data in data base
         // select or find the post
@@ -71,7 +73,9 @@ class PostsController extends Controller
         // update the post data
         $singlePostFromDB->update([
             'title' => $title,
-            'description' => $description
+            'description' => $description,
+            'user_id' => $postCreator
+
         ]);
         // 3-redirection to all posts page
         return to_route('posts.show', $postID);

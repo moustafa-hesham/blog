@@ -26,8 +26,8 @@
                 <tr>
                     <th scope="row">{{ $post->id }}</th>
                     <td>{{ $post->title }}</td>
-                    <td>{{ $post->posted_by }}</td>
-                    <td>{{ $post['created_at'] }}</td>
+                    <td>{{ $post->user?->name ?? 'NA' }}</td>
+                    <td>{{ $post->created_at->format('Y-m-d') }}</td>
                     <td>
                         <div>
 

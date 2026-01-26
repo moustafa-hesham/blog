@@ -27,7 +27,7 @@
                 <option selected disabled>Choose creator</option>
 
                 @foreach ($users as $user)
-                    <option value={{ $user->id }}>{{ $user->name }}</option>
+                    <option @if ($user->id == $post->user_id) selected @endif value={{ $user->id }}>{{ $user->name }}</option>
 
                 @endforeach
             </select>
